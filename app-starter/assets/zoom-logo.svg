@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 180" role="img" aria-labelledby="title desc">
+<title id="title">ZOOM زووم</title><desc id="desc">Stylized Z camera lens mark with ZOOM wordmark</desc>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M24 34h146L52 146h146" stroke="#0066CC" stroke-width="22"/>
+<circle cx="158" cy="48" r="34" fill="#0B2D4A" stroke="#00B4D8" stroke-width="8"/>
+<circle cx="158" cy="48" r="17" fill="#0066CC" stroke="none"/>
+<circle cx="158" cy="48" r="6" fill="#FFFFFF" stroke="none"/>
+</g>
+<text x="225" y="112" fill="#0B2D4A" font-family="Arial, sans-serif" font-size="86" font-weight="700" letter-spacing="3">ZOOM</text>
+<text x="588" y="151" text-anchor="end" direction="rtl" fill="#0066CC" font-family="Arial, sans-serif" font-size="31" font-weight="600">زووم</text>
+</svg>

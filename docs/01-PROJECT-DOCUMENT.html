@@ -1,0 +1,643 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>وثيقة المشروع: ZOOM | زووم — CCTV Manager</title><style>
+@font-face{font-family:'IBM Plex Sans Arabic';font-weight:400;font-display:swap;src:url('../app-starter/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2') format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200E}
+@font-face{font-family:'IBM Plex Sans Arabic';font-weight:600;font-display:swap;src:url('../app-starter/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2') format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200E}
+@font-face{font-family:'IBM Plex Sans Arabic';font-weight:700;font-display:swap;src:url('../app-starter/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2') format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200E}
+@font-face{font-family:'IBM Plex Sans Arabic';font-weight:400;font-display:swap;src:url('../app-starter/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:'IBM Plex Sans Arabic';font-weight:600;font-display:swap;src:url('../app-starter/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:'IBM Plex Sans Arabic';font-weight:700;font-display:swap;src:url('../app-starter/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
+:root{--bg:#F3F6F7;--surface:#fff;--text:#0E1A22;--muted:#52626E;--line:#D5DDE2;--primary:#096A6C;--amber:#FFB703;--ink:#14212B}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1820;--surface:#16232D;--text:#E8EFF3;--muted:#9DAEBA;--line:#26363F;--primary:#2BB3B5}}
+html{font-size:17px}body{margin:0;background:var(--bg);color:var(--text);font-family:'IBM Plex Sans Arabic',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;line-height:1.85}
+main{max-width:820px;margin:0 auto;padding:1.2rem 1rem 4rem}
+h1{font-size:1.7rem;line-height:1.35;border-inline-start:6px solid var(--amber);padding-inline-start:.7rem;margin:1.2rem 0 .6rem}
+h2{font-size:1.3rem;margin:2.2rem 0 .6rem;padding-bottom:.3rem;border-bottom:2px solid var(--line)}
+h3{font-size:1.08rem;margin:1.6rem 0 .4rem;color:var(--primary)}
+a{color:var(--primary)}hr{border:0;border-top:1px solid var(--line);margin:1.5rem 0}
+table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;background:var(--surface);font-size:.92rem;margin:.8rem 0}
+th,td{border:1px solid var(--line);padding:.45rem .65rem;text-align:right;vertical-align:top}th{background:var(--ink);color:#fff;font-weight:600}
+code{background:rgba(127,140,150,.18);padding:.1rem .35rem;border-radius:5px;font-size:.88em;direction:ltr;unicode-bidi:isolate}
+pre{direction:ltr;text-align:left;background:#0E1A22;color:#E8EFF3;padding:.9rem 1rem;border-radius:10px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0;color:inherit}
+blockquote{margin:.8rem 0;padding:.5rem 1rem;background:rgba(255,183,3,.15);border-inline-start:4px solid var(--amber);border-radius:6px}
+img{max-width:100%;height:auto;border-radius:10px;margin:.4rem 0}li{margin:.2rem 0}input[type=checkbox]{margin-inline-end:.4rem}
+</style></head><body><main><div dir="rtl"><h1>وثيقة المشروع الكاملة: ZOOM | زووم — CCTV Manager</h1>
+<p><strong>الإصدار:</strong> 2.0 (مراجعة وتطوير للـ PRD الأول) · <strong>التاريخ:</strong> 22 أكتوبر 2026
+<strong>الجهاز المستهدف:</strong> iPhone 13 (Safari, iOS 15 فأعلى) · <strong>النوع:</strong> PWA يعمل بدون إنترنت</p>
+<hr>
+<h2>1) ملخص تنفيذي</h2>
+<p>تطبيق على الآيفون يساعد فني تركيب كاميرات المراقبة على أربعة أشياء: <strong>المعاينة وعرض السعر</strong> (PDF احترافي يُرسل بالواتساب)، <strong>العرض السريع من الأعداد</strong> (يكتب عدد الكاميرات فقط ويحسب التطبيق الباقي)، <strong>متابعة العملاء والضمان</strong>، و<strong>حاسبات الميدان</strong> (سعة الهارد، الباور، هبوط الجهد).</p>
+<ul>
+<li>لا يحتاج حساب مطور ولا متجر Apple: يُرفع على GitHub Pages ويُضاف للشاشة الرئيسية.</li>
+<li>كل البيانات تبقى على الهاتف. لا خوادم ولا اشتراكات.</li>
+<li>يُبنى على <strong>4 مراحل</strong>، وكل مرحلة تطبيق يعمل بحد ذاته ويُجرَّب على الآيفون قبل المرحلة التالية.</li>
+</ul>
+<h2>2) المستخدم والبيئة</h2>
+<table>
+<thead>
+<tr>
+<th>البند</th>
+<th>القرار</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>المستخدم</td>
+<td>فني واحد، يعمل في الميدان، يكتب قليلًا ويفضّل الأزرار الكبيرة</td>
+</tr>
+<tr>
+<td>اللغة والاتجاه</td>
+<td>عربي RTL، وأرقام لاتينية (0-9) للأسعار والهواتف</td>
+</tr>
+<tr>
+<td>العملة</td>
+<td>جنيه مصري (ج.م)، وتكون قابلة للتغيير من الإعدادات</td>
+</tr>
+<tr>
+<td>الاتصال</td>
+<td>يعمل بدون إنترنت. الإنترنت مطلوب فقط عند رفع التحديثات وإرسال الواتساب</td>
+</tr>
+<tr>
+<td>الشاشة</td>
+<td>طولية (Portrait) فقط</td>
+</tr>
+</tbody></table>
+<h2>3) ما الذي تغيّر عن الـ PRD الأول ولماذا</h2>
+<table>
+<thead>
+<tr>
+<th>البند</th>
+<th>في الـ PRD الأول</th>
+<th>القرار الجديد</th>
+<th>السبب</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>مكتبة الواجهة</td>
+<td>Tailwind CSS</td>
+<td><strong>Bootstrap 5 RTL</strong></td>
+<td>يدعم العربي واتجاه اليمين لليسار جاهزًا، وأسهل في العمل بالنسخ واللصق</td>
+</tr>
+<tr>
+<td>توليد PDF</td>
+<td>html2pdf أو jsPDF</td>
+<td><strong>html2pdf.js (نسخة الصورة) + خطة بديلة بالطباعة</strong></td>
+<td>jsPDF وحده لا يدعم وصل الحروف العربية. التحويل عبر الصورة يحافظ على شكل الخط</td>
+</tr>
+<tr>
+<td>التخزين</td>
+<td>IndexedDB أو localStorage</td>
+<td><strong>IndexedDB</strong> + نسخة احتياطية JSON</td>
+<td>اللوجو والعروض الكثيرة أكبر من حد localStorage (نحو 5MB)</td>
+</tr>
+<tr>
+<td>المكتبات</td>
+<td>CDN</td>
+<td><strong>ملفات محلية</strong> داخل المشروع</td>
+<td>حتى يعمل التطبيق بدون إنترنت</td>
+</tr>
+<tr>
+<td>الواتساب</td>
+<td>رسالة نصية</td>
+<td>رسالة نصية + <strong>مشاركة ملف PDF نفسه</strong></td>
+<td>رابط <code>wa.me</code> لا يرفق ملفات. المشاركة تتم عبر <code>navigator.share</code></td>
+</tr>
+<tr>
+<td>الأسعار</td>
+<td>قائمة أسعار مسبقة</td>
+<td>قائمة أسعار بها <strong>سعر التكلفة وسعر البيع</strong> + <strong>تثبيت السعر داخل كل عرض</strong></td>
+<td>حتى يُحسب الربح، وحتى لا تتغير العروض القديمة عند تعديل الأسعار</td>
+</tr>
+<tr>
+<td>إشعار الضمان</td>
+<td>إشعار آلي</td>
+<td><strong>قائمة &quot;ينتهي قريبًا&quot;</strong> تظهر عند فتح التطبيق</td>
+<td>الإشعارات الخارجية على iOS تحتاج خادمًا. القائمة تؤدي الغرض بدون تعقيد</td>
+</tr>
+<tr>
+<td>النسخ الاحتياطي</td>
+<td>خيار</td>
+<td><strong>إلزامي</strong> مع تذكير أسبوعي</td>
+<td>تخزين الآيفون قد يُمسح في حالات معينة</td>
+</tr>
+<tr>
+<td>إدخال الأعداد فقط</td>
+<td>غير موجود</td>
+<td><strong>العرض السريع من الأعداد</strong> (القسم 6-هـ)</td>
+<td>طلب مباشر من المستخدم النهائي: يكتب 4 كاميرات والتطبيق يحسب بقية المستلزمات</td>
+</tr>
+<tr>
+<td>ميزات جديدة</td>
+<td>لا يوجد</td>
+<td>نسخ عرض قديم، باقات جاهزة، حالة العرض، الدفعات، تحذير الهامش</td>
+<td>توفر وقتًا كبيرًا في الاستخدام اليومي</td>
+</tr>
+</tbody></table>
+<h2>4) هيكل التطبيق والشاشات</h2>
+<p>أربعة أقسام في شريط سفلي. صور الشاشات في <code>design/mockups/</code>.</p>
+<table>
+<thead>
+<tr>
+<th>القسم</th>
+<th>الشاشات</th>
+<th>الصورة</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>عروض الأسعار</td>
+<td>قائمة العروض، عرض سعر جديد، <strong>العرض السريع</strong>، معاينة الـ PDF</td>
+<td><code>01-quotes-list</code> · <code>02-new-quote</code> · <code>08-quick-quote</code> · <code>03-quote-pdf-a4</code></td>
+</tr>
+<tr>
+<td>العملاء والضمان</td>
+<td>قائمة العملاء، تفاصيل العميل، قائمة &quot;ينتهي قريبًا&quot;</td>
+<td><code>06-clients-warranty</code></td>
+</tr>
+<tr>
+<td>الحاسبات</td>
+<td>سعة الهارد، الباور وهبوط الجهد</td>
+<td><code>04-hdd-calculator</code> · <code>05-power-calculator</code></td>
+</tr>
+<tr>
+<td>الإعدادات</td>
+<td>الملخص المالي، المظهر، بيانات النشاط، قائمة الأسعار، النسخة الاحتياطية</td>
+<td><code>07-settings-profit</code></td>
+</tr>
+</tbody></table>
+<p><strong>قاعدة التصميم:</strong> شاشة واحدة = مهمة واحدة. أزرار لا تقل عن 48px، و56px في الثيم الميداني. كل رقم قابل للتعديل بأزرار (+ / −) بدل لوحة المفاتيح قدر الإمكان.</p>
+<h2>5) المراحل</h2>
+<h3>المرحلة 1: عرض السعر والعملاء</h3>
+<ul>
+<li>إعدادات النشاط (الاسم، الهاتف، اللوجو، الشروط الافتراضية).</li>
+<li>نموذج عرض السعر: بيانات العميل، البنود، الخدمات، الخصم، الصافي.</li>
+<li>توليد PDF بتنسيق A4 وحفظه ومشاركته (واتساب).</li>
+<li>حفظ العروض والعملاء، والبحث بالاسم أو الهاتف.</li>
+<li>ملفات PWA الأساسية (manifest + service worker) والرفع على GitHub Pages.</li>
+</ul>
+<p><strong>تنتهي المرحلة عندما:</strong> تُنشئ عرضًا حقيقيًا على الآيفون، يخرج الـ PDF بخط عربي سليم، وتُرسله لنفسك على واتساب، ثم تُغلق التطبيق وتفتحه بدون إنترنت وتجد العرض محفوظًا.</p>
+<h3>المرحلة 2: قائمة الأسعار والنسخ الاحتياطي</h3>
+<ul>
+<li>قائمة الأسعار (صنف، فئة، مواصفات، تكلفة، سعر بيع، وحدة) والإدراج بضغطة زر.</li>
+<li>نسخ عرض قديم، وباقات جاهزة (مثل 4 كاميرات، 8 كاميرات).</li>
+<li>حالة العرض (مسودة / مُرسل / مقبول / مرفوض) والدفعات (المدفوع والمتبقي).</li>
+<li>تحذير الهامش المنخفض.</li>
+<li>حقل <strong>الدور (<code>role</code>)</strong> لكل صنف في قائمة الأسعار، ليستخدمه العرض السريع في المرحلة 3.</li>
+<li>تصدير واستيراد JSON مع تحقق من سلامة الملف + تذكير أسبوعي.</li>
+</ul>
+<p><strong>تنتهي عندما:</strong> تحفظ نسخة احتياطية، تمسح بيانات التطبيق تجريبيًا، ثم تستعيدها كاملة.</p>
+<h3>المرحلة 3: الحاسبات والعرض السريع</h3>
+<ul>
+<li>حاسبة سعة الهارد (القسم 7-أ).</li>
+<li>حاسبة الباور وهبوط الجهد (القسم 7-ب).</li>
+<li>زر &quot;أضف الهارد المقترح إلى عرض السعر&quot;.</li>
+<li><strong>العرض السريع من الأعداد</strong> (القسم 6-هـ) وشاشة قواعده في الإعدادات.</li>
+</ul>
+<p><strong>تنتهي عندما:</strong> تطابق نتائج الحاسبة الأمثلة الموجودة في هذه الوثيقة، ويعطي العرض السريع نتيجة مثال القسم 6-هـ.</p>
+<h3>المرحلة 4: الضمان ولوحة الأرباح</h3>
+<ul>
+<li>تاريخ بدء وانتهاء الضمان لكل عميل، وقائمة &quot;ينتهي خلال 30 يومًا&quot;.</li>
+<li>زر &quot;عرض صيانة دورية&quot; يفتح واتساب برسالة جاهزة.</li>
+<li>ملخص الشهر: إجمالي المقبول، الربح التقديري، متوسط الهامش.</li>
+<li>التبديل بين الثيمات الثلاثة.</li>
+</ul>
+<p><strong>تنتهي عندما:</strong> تظهر الأرقام صحيحة بعد إدخال 5 عروض تجريبية بحالات مختلفة.</p>
+<h2>6) تفاصيل عرض السعر</h2>
+<h3>6-أ) الحقول</h3>
+<ul>
+<li><strong>العميل:</strong> الاسم (إلزامي)، الهاتف، العنوان، تاريخ المعاينة.</li>
+<li><strong>العرض:</strong> الرقم (تلقائي Q-1001، Q-1002...)، التاريخ، مدة الصلاحية بالأيام (الافتراضي 7).</li>
+<li><strong>البند:</strong> الاسم، المواصفات، الفئة، الكمية، سعر الوحدة، سعر التكلفة (داخلي ولا يظهر في الـ PDF).</li>
+<li><strong>فئات البنود:</strong> كاميرا داخلية، كاميرا خارجية، DVR/NVR، هارد، أسلاك، باور وملحقات، خدمات (مصنعية، تمديد، برمجة).</li>
+</ul>
+<h3>6-ب) قواعد الحساب</h3>
+<pre><code>إجمالي البند   = الكمية × سعر الوحدة
+المجموع        = مجموع إجماليات البنود (والخدمات)
+الخصم          = نسبة % من المجموع  أو  مبلغ ثابت (لا يزيد عن المجموع)
+الضريبة        = اختيارية، النسبة قابلة للتعديل، والافتراضي: مغلقة
+الصافي         = المجموع − الخصم (+ الضريبة إن وُجدت)
+المتبقي        = الصافي − مجموع الدفعات
+التكلفة        = مجموع (الكمية × سعر التكلفة)
+الربح          = الصافي − التكلفة
+الهامش %       = الربح ÷ الصافي × 100
+</code></pre>
+<p>تحذير الهامش يظهر إذا نزل الهامش عن الحد المحدد في الإعدادات (الافتراضي 15%).</p>
+<h3>6-ج) حالات العرض</h3>
+<p>مسودة ← مُرسل ← مقبول أو مرفوض. العرض المقبول لا يُعدَّل. يُنسخ كعرض جديد بدلًا من ذلك. عند القبول يُطلب تاريخ بدء الضمان (الافتراضي: اليوم).</p>
+<h3>6-د) تثبيت الأسعار</h3>
+<p>يُنسخ اسم البند وسعره وتكلفته داخل العرض نفسه لحظة الإضافة. تعديل قائمة الأسعار لاحقًا <strong>لا يغيّر</strong> أي عرض قديم أبدًا.</p>
+<h3>6-هـ) العرض السريع من الأعداد (طلب من المستخدم النهائي)</h3>
+<p><strong>الفكرة:</strong> الفني يكتب <strong>أعداد الكاميرات فقط</strong> (مثل: 4 كاميرات خارجية 2MP) والتطبيق يبني عرض السعر كاملًا: جهاز التسجيل، الهارد، السلك، الوصلات، الباور، المصنعية. بعدها يفتحه كعرض سعر عادي للتعديل والإرسال. الصورة: <code>design/mockups/08-quick-quote.png</code>.</p>
+<p><strong>المدخلات (شاشة واحدة):</strong> عدد الكاميرات الخارجية، عدد الكاميرات الداخلية، دقة الكاميرا (الافتراضي 2MP)، والهارد: <strong>تلقائي</strong> حسب أيام التسجيل أو مقاس تختاره (500GB / 1TB / 2TB...).</p>
+<p><strong>قواعد الحساب التلقائي</strong> (قابلة للتعديل من الإعدادات):</p>
+<table>
+<thead>
+<tr>
+<th>الصنف</th>
+<th>القاعدة</th>
+<th>الافتراضي</th>
+<th>الدور في قائمة الأسعار (<code>role</code>)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>الكاميرات</td>
+<td>العدد الذي كتبته لكل نوع</td>
+<td>لا يوجد</td>
+<td><code>camera-outdoor-2mp</code> · <code>camera-indoor-2mp</code></td>
+</tr>
+<tr>
+<td>جهاز التسجيل</td>
+<td>أصغر عدد قنوات ≥ مجموع الكاميرات من (4 / 8 / 16 / 32) + قنوات احتياطية اختيارية</td>
+<td>0 احتياطي</td>
+<td><code>recorder-4ch</code> · <code>recorder-8ch</code>...</td>
+</tr>
+<tr>
+<td>الهارد</td>
+<td>تلقائي: حسب الحاسبة (7-أ)، أو المقاس الذي اخترته</td>
+<td>30 يومًا</td>
+<td><code>hdd-500gb</code> · <code>hdd-1tb</code> · <code>hdd-2tb</code>...</td>
+</tr>
+<tr>
+<td>السلك</td>
+<td>عدد الكاميرات × متر لكل كاميرا</td>
+<td>25 م</td>
+<td><code>cable-rg59</code></td>
+</tr>
+<tr>
+<td>وصلات BNC</td>
+<td>عدد لكل كاميرا (طرف الكاميرا وطرف الجهاز)</td>
+<td>2</td>
+<td><code>bnc</code></td>
+</tr>
+<tr>
+<td>وصلات باور DC</td>
+<td>عدد لكل كاميرا</td>
+<td>1</td>
+<td><code>dc-jack</code></td>
+</tr>
+<tr>
+<td>الباور سبلاي</td>
+<td>من حاسبة الباور (7-ب) بهامش 30%</td>
+<td>لا يوجد</td>
+<td><code>psu-12v-5a</code> · <code>psu-12v-10a</code>...</td>
+</tr>
+<tr>
+<td>المصنعية</td>
+<td>عدد الكاميرات × أجر الكاميرا الواحدة</td>
+<td>250 ج.م</td>
+<td><code>labor-per-camera</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>ملاحظة:</strong> سبليتر الباور (كابل تقسيم 4 مخارج) يمكن إضافته كقاعدة اختيارية مغلقة افتراضيًا (<code>psu-splitter</code>).</p>
+</blockquote>
+<p><strong>كيف يعرف التطبيق السعر؟</strong> من قائمة الأسعار عبر حقل <code>role</code> لكل صنف. إن لم يوجد صنف بهذا الدور يظهر البند بسعر 0 وتحته تنبيه <strong>&quot;حدّد السعر&quot;</strong>، ولا يضيع شيء.</p>
+<p><strong>مثال للاختبار</strong> (4 كاميرات خارجية 2MP، الهارد 500GB، بأسعار تجريبية):</p>
+<table>
+<thead>
+<tr>
+<th>البند</th>
+<th>الكمية</th>
+<th>سعر الوحدة</th>
+<th>الإجمالي</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>كاميرا خارجية 2MP</td>
+<td>4</td>
+<td>380</td>
+<td>1,520</td>
+</tr>
+<tr>
+<td>جهاز تسجيل DVR 4 قنوات</td>
+<td>1</td>
+<td>1,350</td>
+<td>1,350</td>
+</tr>
+<tr>
+<td>هارد 500GB</td>
+<td>1</td>
+<td>1,100</td>
+<td>1,100</td>
+</tr>
+<tr>
+<td>سلك RG59 (متر)</td>
+<td>100</td>
+<td>12</td>
+<td>1,200</td>
+</tr>
+<tr>
+<td>وصلات BNC</td>
+<td>8</td>
+<td>10</td>
+<td>80</td>
+</tr>
+<tr>
+<td>وصلات باور DC</td>
+<td>4</td>
+<td>8</td>
+<td>32</td>
+</tr>
+<tr>
+<td>باور سبلاي 12V 5A</td>
+<td>1</td>
+<td>350</td>
+<td>350</td>
+</tr>
+<tr>
+<td>مصنعية (250 للكاميرا)</td>
+<td>4</td>
+<td>250</td>
+<td>1,000</td>
+</tr>
+<tr>
+<td><strong>الإجمالي</strong></td>
+<td></td>
+<td></td>
+<td><strong>6,632</strong></td>
+</tr>
+</tbody></table>
+<p><strong>تنبيه الهارد:</strong> هارد 500GB مع 4 كاميرات 1080p بضغط H.265 يسجل نحو <strong>10 أيام</strong> فقط (43 GB في اليوم). ولتسجيل 30 يومًا يلزم <strong>2 TB</strong>. يظهر هذا التنبيه تلقائيًا ولا يمنع الاختيار، فالقرار للفني.</p>
+<p><strong>بعد الحساب:</strong> زر <strong>&quot;فتح كعرض سعر&quot;</strong> ينقل البنود إلى نموذج عرض السعر مع تثبيت الأسعار (6-د)، ويمكن تعديل أي بند أو حذفه أو إضافة غيره قبل توليد الـ PDF.</p>
+<h2>7) الحاسبات</h2>
+<blockquote>
+<p>كل القيم الافتراضية تقديرية وقابلة للتعديل من شاشة الإعدادات. للتصميم الدقيق ارجع لمواصفات الشركة المصنعة.</p>
+</blockquote>
+<h3>7-أ) سعة الهارد</h3>
+<p><strong>Bitrate الافتراضي لكل كاميرا (Mbps):</strong></p>
+<table>
+<thead>
+<tr>
+<th>الدقة</th>
+<th>H.264</th>
+<th>H.265</th>
+<th>H.265+</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1080p (2MP)</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>2K (4MP)</td>
+<td>4.0</td>
+<td>2.0</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>4K (8MP)</td>
+<td>8.0</td>
+<td>4.0</td>
+<td>2.0</td>
+</tr>
+</tbody></table>
+<pre><code>GB لكل كاميرا في اليوم = Mbps × 86400 ÷ 8 ÷ 1000
+المساحة (TB)            = GB لكل كاميرا × عدد الكاميرات × عدد الأيام ÷ 1000
+مع هامش الأمان 10%      = المساحة × 1.10
+التسجيل عند الحركة      = اختياري: ضرب الناتج في معامل (الافتراضي 0.5)
+المقاسات القياسية (TB)  = 0.5, 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20
+الاقتراح                = أصغر مقاس ≥ المساحة المطلوبة
+الأيام التي يغطيها هارد = السعة (GB) ÷ 1.10 ÷ (GB لكل كاميرا في اليوم × عدد الكاميرات)
+</code></pre>
+<p><strong>مثال للاختبار:</strong> 8 كاميرات، 1080p، H.265، 30 يومًا ⇒ 86 GB في اليوم، 2.59 TB، ومع الهامش <strong>2.85 TB</strong>، فالاقتراح <strong>4 TB</strong>.</p>
+<p><strong>مثال ثانٍ (هارد 500GB):</strong> 4 كاميرات، 1080p، H.265 ⇒ 43 GB في اليوم، فالهارد 500GB يغطي نحو <strong>10 أيام</strong>. ولتسجيل 30 يومًا: 1.30 TB، ومع الهامش 1.43 TB، فالاقتراح <strong>2 TB</strong>.</p>
+<h3>7-ب) الباور وهبوط الجهد</h3>
+<p><strong>الاستهلاك الافتراضي لكل كاميرا عند 12V:</strong> داخلية 0.3 A · خارجية IR 0.5 A · متحركة 1.0 A.</p>
+<pre><code>التيار الكلي           = عدد الكاميرات × تيار الكاميرا
+الباور المطلوب         = التيار الكلي × 1.30   (هامش 30%)
+المقاسات القياسية (A)  = 2, 5, 10, 15, 20, 30
+هبوط الجهد (V)         = تيار كاميرا واحدة × 2 × الطول(م) × ρ ÷ مساحة المقطع(مم²)
+هبوط الجهد %           = هبوط الجهد ÷ 12 × 100
+ρ نحاس = 0.0175     ρ CCA = 0.0283    (Ω·مم²/م)
+</code></pre>
+<p>الحد الآمن: <strong>حتى 5%</strong> أخضر، <strong>5% إلى 10%</strong> تحذير أصفر، <strong>أكثر من 10%</strong> خطر أحمر مع اقتراح: سلك أسمك، أو نحاس بدل CCA، أو باور فرعي قريب من الكاميرا.</p>
+<p><strong>مثال للاختبار:</strong> 8 كاميرات × 0.5 A، أبعد كاميرا 40 م، سلك 1 مم²:
+التيار 4.0 A، الباور المقترح <strong>10 A</strong>، وهبوط الجهد <strong>9.4%</strong> (1.13 V) بسلك CCA، و<strong>5.8%</strong> (0.70 V) بالنحاس.</p>
+<h2>8) العملاء والضمان</h2>
+<ul>
+<li><strong>العميل:</strong> الاسم، الهاتف، العنوان، ملاحظات، وسجل عروضه.</li>
+<li><strong>الضمان:</strong> تاريخ البدء + مدة الضمان بالشهور (الافتراضي 12) ⇒ تاريخ الانتهاء يُحسب تلقائيًا.</li>
+<li><strong>الحالات:</strong> ساري · ينتهي قريبًا (30 يومًا أو أقل) · منتهي.</li>
+<li><strong>زر &quot;عرض صيانة&quot;:</strong> يفتح واتساب العميل برسالة جاهزة قابلة للتعديل من الإعدادات.</li>
+<li><strong>أرقام الهاتف:</strong> تُخزّن كما كُتبت، وعند فتح واتساب تُحوَّل إلى الصيغة الدولية (01012345678 ⇒ 201012345678). رمز الدولة 20 قابل للتغيير.</li>
+</ul>
+<h2>9) الإعدادات</h2>
+<ol>
+<li><strong>بيانات النشاط:</strong> الاسم (<strong>Zoom</strong>)، الهاتف، العنوان، اللوجو (يُحفظ مصغّرًا داخل التطبيق).</li>
+<li><strong>الشروط الافتراضية:</strong> مدة الضمان، الدفعات، الصلاحية. وتظهر أسفل كل عرض.</li>
+<li><strong>قائمة الأسعار.</strong></li>
+<li><strong>قيم الحاسبات الافتراضية.</strong></li>
+<li><strong>قواعد العرض السريع:</strong> متر السلك لكل كاميرا، عدد الوصلات، أجر الكاميرا، القنوات الاحتياطية، أيام التسجيل الافتراضية.</li>
+<li><strong>المظهر:</strong> تلقائي · نهار · ليل · ميداني.</li>
+<li><strong>النسخة الاحتياطية:</strong> تصدير، استيراد، آخر نسخة.</li>
+</ol>
+<h2>10) هيكل البيانات (v2)</h2>
+<p><strong>مخازن IndexedDB:</strong> <code>settings</code> · <code>clients</code> · <code>quotes</code> · <code>pricebook</code> (قاعدة البيانات <code>ain-db</code>، الإصدار 1).</p>
+<pre><code class="language-json">{
+  &quot;schemaVersion&quot;: 2,
+  &quot;settings&quot;: {
+    &quot;businessName&quot;: &quot;Zoom&quot;,
+    &quot;phone&quot;: &quot;01000000000&quot;,
+    &quot;address&quot;: &quot;&quot;,
+    &quot;logoDataUrl&quot;: &quot;&quot;,
+    &quot;terms&quot;: [&quot;الضمان سنة كاملة على الأجهزة والتركيب ضد عيوب الصناعة.&quot;, &quot;الدفع: 50% مقدم و50% بعد التشغيل.&quot;, &quot;العرض ساري لمدة 7 أيام.&quot;],
+    &quot;defaults&quot;: { &quot;validityDays&quot;: 7, &quot;warrantyMonths&quot;: 12, &quot;minMarginPct&quot;: 15, &quot;countryCode&quot;: &quot;20&quot;, &quot;vatPct&quot;: 0 },
+    &quot;quickQuote&quot;: { &quot;defaultCameraMp&quot;: 2, &quot;cablePerCameraM&quot;: 25, &quot;bncPerCamera&quot;: 2, &quot;dcPerCamera&quot;: 1, &quot;laborPerCamera&quot;: 250, &quot;spareChannels&quot;: 0, &quot;defaultRecordDays&quot;: 30 },
+    &quot;theme&quot;: &quot;auto&quot;,
+    &quot;lastBackupAt&quot;: null,
+    &quot;nextQuoteNumber&quot;: 1006
+  },
+  &quot;clients&quot;: [
+    { &quot;id&quot;: &quot;c-0001&quot;, &quot;name&quot;: &quot;سامي عادل&quot;, &quot;phone&quot;: &quot;01001234567&quot;, &quot;address&quot;: &quot;مدينة نصر - القاهرة&quot;, &quot;notes&quot;: &quot;&quot; }
+  ],
+  &quot;pricebook&quot;: [
+    { &quot;id&quot;: &quot;p-0001&quot;, &quot;category&quot;: &quot;outdoor-camera&quot;, &quot;role&quot;: &quot;camera-outdoor-5mp&quot;, &quot;name&quot;: &quot;كاميرا خارجية 5MP&quot;, &quot;spec&quot;: &quot;Dahua · IR 30م&quot;, &quot;unit&quot;: &quot;قطعة&quot;, &quot;cost&quot;: 400, &quot;price&quot;: 520 }
+  ],
+  &quot;quotes&quot;: [
+    {
+      &quot;id&quot;: &quot;Q-1005&quot;,
+      &quot;clientId&quot;: &quot;c-0001&quot;,
+      &quot;date&quot;: &quot;2026-10-22&quot;,
+      &quot;inspectionDate&quot;: &quot;2026-10-20&quot;,
+      &quot;validityDays&quot;: 7,
+      &quot;status&quot;: &quot;draft&quot;,
+      &quot;items&quot;: [
+        { &quot;name&quot;: &quot;كاميرا خارجية 5MP&quot;, &quot;spec&quot;: &quot;Dahua · IR 30م&quot;, &quot;category&quot;: &quot;outdoor-camera&quot;, &quot;qty&quot;: 4,   &quot;price&quot;: 520,  &quot;cost&quot;: 400 },
+        { &quot;name&quot;: &quot;جهاز تسجيل DVR 4 قنوات&quot;, &quot;spec&quot;: &quot;Dahua · H.265&quot;, &quot;category&quot;: &quot;recorder&quot;, &quot;qty&quot;: 1,   &quot;price&quot;: 1350, &quot;cost&quot;: 1100 },
+        { &quot;name&quot;: &quot;هارد 1TB&quot;, &quot;spec&quot;: &quot;WD Purple&quot;, &quot;category&quot;: &quot;hdd&quot;, &quot;qty&quot;: 1,   &quot;price&quot;: 1500, &quot;cost&quot;: 1300 },
+        { &quot;name&quot;: &quot;سلك RG59 (بالمتر)&quot;, &quot;spec&quot;: &quot;كواكس + باور&quot;, &quot;category&quot;: &quot;cable&quot;, &quot;qty&quot;: 100, &quot;price&quot;: 12,   &quot;cost&quot;: 9 },
+        { &quot;name&quot;: &quot;مصنعية وتركيب وبرمجة&quot;, &quot;spec&quot;: &quot;&quot;, &quot;category&quot;: &quot;service&quot;, &quot;qty&quot;: 1,   &quot;price&quot;: 1000, &quot;cost&quot;: 400 }
+      ],
+      &quot;discount&quot;: { &quot;type&quot;: &quot;fixed&quot;, &quot;value&quot;: 200 },
+      &quot;payments&quot;: [],
+      &quot;warranty&quot;: { &quot;startDate&quot;: null, &quot;months&quot;: 12 }
+    }
+  ]
+}
+</code></pre>
+<p><strong>القيم المحسوبة (لا تُخزَّن، تُحسب عند العرض):</strong> المجموع 7,130 · الصافي <strong>6,930</strong> · التكلفة 5,300 · الربح 1,630 · الهامش 23.5%.</p>
+<p><strong>قواعد:</strong> المبالغ أعداد صحيحة بالجنيه أو بكسرين عشريين كحد أقصى. التواريخ بصيغة <code>YYYY-MM-DD</code>. المعرّفات نصوص فريدة. كل لقطة شاشة في هذه الحزمة مبنية على هذه الأرقام.</p>
+<h2>11) قالب الـ PDF</h2>
+<ul>
+<li><strong>الورق:</strong> A4 طولي، هوامش 14mm، خلفية بيضاء دائمًا (مهما كان ثيم التطبيق).</li>
+<li><strong>الهيدر:</strong> اللوجو واسم النشاط (Zoom) وبياناته يمينًا، ورقم العرض والتاريخ والصلاحية يسارًا، وخط تحته بلون الجرافيت.</li>
+<li><strong>الجسم:</strong> بيانات العميل ثم جدول البنود (#، البيان والمواصفات، الكمية، سعر الوحدة، الإجمالي).</li>
+<li><strong>الإجمالي:</strong> المجموع، الخصم، وشريط &quot;الصافي المطلوب&quot; بخلفية داكنة.</li>
+<li><strong>الشروط والتوقيعات</strong> ثم تذييل بالاسم والهاتف.</li>
+<li><strong>لا يظهر في الـ PDF أبدًا:</strong> سعر التكلفة والربح.</li>
+<li><strong>هوية التطبيق:</strong> يظهر شعار ZOOM | زووم في واجهة التطبيق وعروض الأسعار. يظهر شعار النشاط المرفوع في الإعدادات بجانبه، وإن لم يُرفع يظهر اسم النشاط فقط. لا تُدرج بيانات تواصل غير مقدمة من المستخدم.</li>
+<li><strong>الملفات الجاهزة:</strong> <code>app-starter/css/quote-sheet.css</code>، ومعاينته في <code>03-quote-pdf-a4.png</code>.</li>
+<li><strong>اسم الملف:</strong> <code>Q-1005.pdf</code>.</li>
+</ul>
+<h2>12) التقنية والملفات</h2>
+<table>
+<thead>
+<tr>
+<th>الطبقة</th>
+<th>الاختيار</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>الواجهة</td>
+<td>HTML5 + Bootstrap 5.3 RTL + jQuery 3.7</td>
+</tr>
+<tr>
+<td>الخط</td>
+<td>IBM Plex Sans Arabic (محلي)</td>
+</tr>
+<tr>
+<td>التخزين</td>
+<td>IndexedDB عبر ملف <code>js/db.js</code> صغير</td>
+</tr>
+<tr>
+<td>PDF</td>
+<td>html2pdf.js 0.14 (محلي)</td>
+</tr>
+<tr>
+<td>العمل بدون إنترنت</td>
+<td>Service Worker بنمط cache-first</td>
+</tr>
+<tr>
+<td>الاستضافة</td>
+<td>GitHub Pages</td>
+</tr>
+</tbody></table>
+<p><strong>هيكل المشروع:</strong></p>
+<pre><code>cctv-manager/
+├─ index.html
+├─ manifest.json
+├─ service-worker.js
+├─ css/        themes.css · quote-sheet.css · app.css
+├─ js/         theme.js · db.js · utils.js · quotes.js · pdf.js · clients.js · calc.js · quick-quote.js · app.js
+├─ libs/       bootstrap.rtl.min.css · bootstrap.bundle.min.js · jquery.min.js · html2pdf.bundle.min.js
+├─ fonts/      IBM Plex Sans Arabic (woff2)
+└─ icons/      icon-192.png · icon-512.png · apple-touch-icon.png · favicon-32.png
+</code></pre>
+<p><strong>ما هو جاهز في الحزمة:</strong> <code>manifest.json</code>، مجلد <code>libs</code>، <code>fonts</code>، <code>icons</code>، <code>css/themes.css</code>، <code>css/quote-sheet.css</code>، <code>js/theme.js</code>. الباقي يُكتب خلال المراحل.</p>
+<p><strong>ملاحظات خاصة بـ iOS داخل <code>&lt;head&gt;</code>:</strong></p>
+<pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, viewport-fit=cover&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#14212B&quot;&gt;
+&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;
+&lt;meta name=&quot;mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;
+&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black-translucent&quot;&gt;
+&lt;meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;ZOOM | زووم&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;icons/apple-touch-icon.png&quot;&gt;
+&lt;link rel=&quot;manifest&quot; href=&quot;manifest.json&quot;&gt;
+</code></pre>
+<p><strong>الروابط:</strong> نسبية دائمًا (<code>css/app.css</code> وليس <code>/css/app.css</code>)، لأن GitHub Pages يضع المشروع تحت مسار فرعي.</p>
+<p><strong>التحديثات:</strong> يحتوي <code>service-worker.js</code> على رقم نسخة (<code>CACHE_VERSION</code>). عند كل تحديث يُرفع الرقم، ثم يُغلق التطبيق ويُفتح مرتين على الآيفون.</p>
+<h2>13) الأمان والخصوصية</h2>
+<ul>
+<li><strong>XSS:</strong> أي نص يكتبه المستخدم (اسم عميل، ملاحظة) يُدرج في الصفحة عبر <code>.text()</code> أو دالة <code>escapeHtml()</code>، ولا يُدرج مباشرة داخل <code>.html()</code>.</li>
+<li><strong>التحقق:</strong> الكمية عدد صحيح ≥ 0، والسعر رقم ≥ 0، والاسم لا يتجاوز 100 حرف.</li>
+<li><strong>استيراد JSON:</strong> يُتحقق من <code>schemaVersion</code> وأنواع الحقول وحجم الملف قبل الكتابة فوق أي بيانات، ويُحفظ نسخة قبل الاستيراد.</li>
+<li><strong>الخصوصية:</strong> لا تحليلات ولا طلبات خارجية. أرقام الهاتف تُنظَّف إلى أرقام فقط قبل بناء رابط واتساب.</li>
+<li><strong>GitHub:</strong> المستودع لا يحتوي بيانات عملاء ولا أسعارًا. البيانات تعيش على الهاتف فقط. ملفات النسخ الاحتياطي تُحفظ خارج المستودع.</li>
+</ul>
+<h2>14) قيود iOS والمخاطر</h2>
+<table>
+<thead>
+<tr>
+<th>الخطر</th>
+<th>الأثر</th>
+<th>المعالجة</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>مسح تخزين Safari للمواقع غير المثبتة بعد فترة بلا استخدام</td>
+<td>ضياع بيانات</td>
+<td>التثبيت على الشاشة الرئيسية + نسخة احتياطية أسبوعية</td>
+</tr>
+<tr>
+<td>بيانات Safari منفصلة عن بيانات التطبيق المثبّت</td>
+<td>تبدو البيانات &quot;اختفت&quot; بعد التثبيت</td>
+<td>إدخال البيانات بعد التثبيت فقط، أو استعادة نسخة احتياطية</td>
+</tr>
+<tr>
+<td>فشل أو تشوه الـ PDF العربي</td>
+<td>عرض غير صالح للإرسال</td>
+<td>اختبار في أول يوم من المرحلة 1، والبديل: طباعة ثم Save as PDF</td>
+</tr>
+<tr>
+<td>المشاركة (<code>navigator.share</code>) تعمل بضغطة مستخدم فقط</td>
+<td>لا تعمل تلقائيًا</td>
+<td>تُربط بزر مباشر، وبديل: حفظ في Files</td>
+</tr>
+<tr>
+<td>تأخر ظهور التحديثات بسبب الـ cache</td>
+<td>تبدو النسخة قديمة</td>
+<td>رقم نسخة في الـ Service Worker</td>
+</tr>
+<tr>
+<td>لا إشعارات خارجية بلا خادم</td>
+<td>لا تنبيه الضمان في الخلفية</td>
+<td>قائمة &quot;ينتهي قريبًا&quot; عند فتح التطبيق</td>
+</tr>
+<tr>
+<td>الحاسبات تقديرية</td>
+<td>فرق عن الواقع</td>
+<td>القيم قابلة للتعديل، مع ملاحظة واضحة في الشاشة</td>
+</tr>
+</tbody></table>
+<h2>15) اختبار القبول على الآيفون</h2>
+<p><strong>المرحلة 1</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> التطبيق يُثبَّت على الشاشة الرئيسية ويفتح بدون شريط Safari.</li>
+<li><input disabled="" type="checkbox"> الخط العربي سليم والأرقام صحيحة في كل الشاشات.</li>
+<li><input disabled="" type="checkbox"> عرض بخمسة بنود يعطي الصافي الصحيح (راجع المثال 6,930).</li>
+<li><input disabled="" type="checkbox"> الـ PDF يخرج بعربي سليم وبصفحة A4 واحدة وبدون سعر التكلفة.</li>
+<li><input disabled="" type="checkbox"> مشاركة الـ PDF على واتساب تعمل.</li>
+<li><input disabled="" type="checkbox"> وضع الطيران: التطبيق يفتح والعروض محفوظة.</li>
+</ul>
+<p><strong>المرحلة 2</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> تعديل سعر في القائمة لا يغيّر عرضًا قديمًا.</li>
+<li><input disabled="" type="checkbox"> نسخ عرض قديم يعطي عرضًا جديدًا برقم جديد.</li>
+<li><input disabled="" type="checkbox"> نسخة احتياطية ثم استعادة كاملة بعد مسح البيانات.</li>
+</ul>
+<p><strong>المرحلة 3</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> مثال الهارد يعطي 2.85 TB والاقتراح 4 TB، وهارد 500GB لـ 4 كاميرات يغطي نحو 10 أيام.</li>
+<li><input disabled="" type="checkbox"> مثال الباور يعطي 10 A وهبوط 9.4% (CCA) و5.8% (نحاس).</li>
+<li><input disabled="" type="checkbox"> العرض السريع: 4 كاميرات خارجية 2MP + هارد 500GB يعطي 8 بنود وإجمالي 6,632 (بالأسعار التجريبية) مع تنبيه الهارد.</li>
+<li><input disabled="" type="checkbox"> صنف ناقص من قائمة الأسعار يظهر بسعر 0 وتنبيه &quot;حدّد السعر&quot;.</li>
+</ul>
+<p><strong>المرحلة 4</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> عميل ضمانه ينتهي بعد 12 يومًا يظهر في &quot;ينتهي قريبًا&quot;.</li>
+<li><input disabled="" type="checkbox"> أرقام الملخص الشهري تطابق العروض المقبولة فقط.</li>
+<li><input disabled="" type="checkbox"> الثيمات الثلاثة تعمل ويُحفظ الاختيار بعد إغلاق التطبيق.</li>
+</ul>
+<h2>16) أفكار لما بعد الإصدار الأول</h2>
+<p>صور المعاينة داخل العرض · توقيع العميل على الشاشة · تصدير العروض إلى Excel · استيراد الأسعار من CSV · أكثر من نشاط تجاري · مزامنة اختيارية بين جهازين.</p>
+<h2>17) مسرد سريع</h2>
+<ul>
+<li><strong>PWA:</strong> موقع يعمل كتطبيق (أيقونة، شاشة كاملة، بدون إنترنت).</li>
+<li><strong>IndexedDB:</strong> قاعدة بيانات داخل المتصفح تتسع لبيانات أكبر من localStorage.</li>
+<li><strong>Service Worker:</strong> ملف يحفظ صفحات التطبيق ليعمل بدون إنترنت.</li>
+<li><strong>Pricebook:</strong> قائمة الأسعار المحفوظة.</li>
+<li><strong>MVP:</strong> أصغر نسخة تعمل فعليًا (هنا: المرحلة 1).</li>
+<li><strong>CCA:</strong> سلك ألومنيوم مغطى بالنحاس، مقاومته أعلى من النحاس الصافي.</li>
+<li><strong>Bitrate:</strong> كمية البيانات التي تسجلها الكاميرا في الثانية.</li>
+</ul>
+</div>
+</main></body></html>

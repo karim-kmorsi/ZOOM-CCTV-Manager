@@ -1,0 +1,253 @@
+/* =====================================================================
+   ZOOM | زووم — css/themes.css (v1.0)
+   ---------------------------------------------------------------------
+   * حمّل هذا الملف بعد bootstrap.rtl.min.css (حتى يغلب عليه).
+   * الثيمات: light (نهار) | dark (ليل) | field (ميداني - تباين عالٍ للشمس)
+   * التبديل: <html data-theme="light|dark|field">  (يتم عبر js/theme.js)
+   ===================================================================== */
+
+/* ---------- 1) Fonts (محلية، تعمل بدون إنترنت) ---------- */
+@font-face {
+  font-family: 'IBM Plex Sans Arabic'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2') format('woff2');
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Arabic'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('../fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2') format('woff2');
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Arabic'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url('../fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2') format('woff2');
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Arabic'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../fonts/ibm-plex-sans-arabic-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Arabic'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('../fonts/ibm-plex-sans-arabic-latin-600-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans Arabic'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url('../fonts/ibm-plex-sans-arabic-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* ---------- 2) Tokens مشتركة ---------- */
+:root {
+  --ain-radius-card: 14px;
+  --ain-radius-ctl: 12px;
+  --ain-radius-pill: 999px;
+  --ain-border-w: 1px;
+  --ain-ctl-h: 48px;
+  --ain-font-scale: 1;
+  --ain-nav-h: 64px;
+  --ain-led: #00B4D8;
+  --ain-font: 'IBM Plex Sans Arabic', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* ---------- 3) الثيم الفاتح: نهار (الافتراضي) ---------- */
+:root, [data-theme="light"] {
+  color-scheme: light;
+  --ain-bg: #F3F6F7;        --ain-surface: #FFFFFF;     --ain-surface-2: #E5E7EB;
+  --ain-text: #0E1A22;      --ain-muted: #52626E;       --ain-border: #E5E7EB;
+  --ain-primary: #0066CC;   --ain-primary-ink: #FFFFFF; --ain-primary-press: #0B2D4A;
+  --ain-primary-text: #0066CC;
+  --ain-accent: #00B4D8;    --ain-accent-ink: #0B2D4A;
+  --ain-success: #16703D;   --ain-success-bg: #E2F4EA;
+  --ain-warning: #8A5300;   --ain-warning-bg: #FFF1D1;
+  --ain-danger: #C62828;    --ain-danger-bg: #FBE4E4;
+  --ain-info: #0B5CAD;      --ain-info-bg: #E1EEFA;
+  --ain-topbar: #0B2D4A;    --ain-topbar-ink: #FFFFFF;
+  --ain-focus: rgba(0, 102, 204, .30);
+}
+
+/* ---------- 4) الثيم الداكن: ليل ---------- */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --ain-bg: #0E1820;        --ain-surface: #16232D;     --ain-surface-2: #1D2D39;
+  --ain-text: #E8EFF3;      --ain-muted: #9DAEBA;       --ain-border: #26363F;
+  --ain-primary: #2BB3B5;   --ain-primary-ink: #04171A; --ain-primary-press: #4CC4C6;
+  --ain-primary-text: #2BB3B5;
+  --ain-accent: #00B4D8;    --ain-accent-ink: #0B2D4A;
+  --ain-success: #4CC38A;   --ain-success-bg: #12362A;
+  --ain-warning: #FFB703;   --ain-warning-bg: #3A2D0B;
+  --ain-danger: #FF8A80;    --ain-danger-bg: #3D1F1F;
+  --ain-info: #7DB8FF;      --ain-info-bg: #16304A;
+  --ain-topbar: #0A1218;    --ain-topbar-ink: #FFFFFF;
+  --ain-focus: rgba(43, 179, 181, .40);
+}
+
+/* ---------- 5) الثيم الميداني: تباين عالٍ + أزرار أكبر (للشمس والتصوير الخارجي) ---------- */
+[data-theme="field"] {
+  color-scheme: light;
+  --ain-border-w: 2px;
+  --ain-ctl-h: 56px;
+  --ain-font-scale: 1.12;
+  --ain-bg: #FFFFFF;        --ain-surface: #FFFFFF;     --ain-surface-2: #F0F0F0;
+  --ain-text: #000000;      --ain-muted: #2B2B2B;       --ain-border: #000000;
+  --ain-primary: #000000;   --ain-primary-ink: #FFFFFF; --ain-primary-press: #2B2B2B;
+  --ain-primary-text: #000000;
+  --ain-accent: #FFC400;    --ain-accent-ink: #000000;
+  --ain-success: #0B5D2A;   --ain-success-bg: #CDEBD8;
+  --ain-warning: #5A3600;   --ain-warning-bg: #FFE08A;
+  --ain-danger: #A00000;    --ain-danger-bg: #FAD1D1;
+  --ain-info: #00356B;      --ain-info-bg: #CFE3F7;
+  --ain-topbar: #000000;    --ain-topbar-ink: #FFFFFF;
+  --ain-focus: rgba(255, 196, 0, .70);
+}
+
+/* ---------- 6) ربط الثيم بمتغيرات Bootstrap 5.3 ---------- */
+:root, [data-theme] {
+  --bs-body-bg: var(--ain-bg);
+  --bs-body-color: var(--ain-text);
+  --bs-body-font-family: var(--ain-font);
+  --bs-secondary-color: var(--ain-muted);
+  --bs-border-color: var(--ain-border);
+  --bs-tertiary-bg: var(--ain-surface-2);
+  --bs-link-color: var(--ain-primary-text);
+  --bs-link-hover-color: var(--ain-primary-press);
+  --bs-focus-ring-color: var(--ain-focus);
+}
+
+/* ---------- 7) الأساسيات ---------- */
+html { font-size: calc(16px * var(--ain-font-scale)); -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--ain-font);
+  background: var(--ain-bg);
+  color: var(--ain-text);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+:focus-visible { outline: 3px solid var(--ain-accent); outline-offset: 2px; }
+.ain-num { direction: ltr; unicode-bidi: isolate; display: inline-block; font-variant-numeric: tabular-nums; }
+.text-muted-ain { color: var(--ain-muted) !important; }
+
+/* ---------- 8) الأزرار ---------- */
+.btn {
+  min-height: var(--ain-ctl-h);
+  border-radius: var(--ain-radius-ctl);
+  border-width: var(--ain-border-w);
+  font-weight: 600;
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+}
+.btn-primary {
+  --bs-btn-color: var(--ain-primary-ink);        --bs-btn-bg: var(--ain-primary);        --bs-btn-border-color: var(--ain-primary);
+  --bs-btn-hover-color: var(--ain-primary-ink);  --bs-btn-hover-bg: var(--ain-primary-press);  --bs-btn-hover-border-color: var(--ain-primary-press);
+  --bs-btn-active-color: var(--ain-primary-ink); --bs-btn-active-bg: var(--ain-primary-press); --bs-btn-active-border-color: var(--ain-primary-press);
+  --bs-btn-focus-shadow-rgb: 0, 102, 204;
+}
+.btn-accent {
+  --bs-btn-color: var(--ain-accent-ink);        --bs-btn-bg: var(--ain-accent);        --bs-btn-border-color: var(--ain-accent);
+  --bs-btn-hover-color: var(--ain-accent-ink);  --bs-btn-hover-bg: var(--ain-accent);  --bs-btn-hover-border-color: var(--ain-accent);
+  --bs-btn-active-color: var(--ain-accent-ink); --bs-btn-active-bg: var(--ain-accent); --bs-btn-active-border-color: var(--ain-accent);
+}
+.btn-accent:hover, .btn-accent:active { filter: brightness(.95); }
+[data-theme="field"] .btn-accent { --bs-btn-border-color: #000000; }
+.btn-outline-secondary {
+  --bs-btn-color: var(--ain-text);               --bs-btn-border-color: var(--ain-border);
+  --bs-btn-hover-color: var(--ain-text);         --bs-btn-hover-bg: var(--ain-surface-2);  --bs-btn-hover-border-color: var(--ain-border);
+  --bs-btn-active-color: var(--ain-text);        --bs-btn-active-bg: var(--ain-surface-2); --bs-btn-active-border-color: var(--ain-border);
+}
+
+/* ---------- 9) الحقول ---------- */
+.form-label { font-weight: 600; font-size: .875rem; color: var(--ain-muted); margin-bottom: .25rem; }
+.form-control, .form-select {
+  min-height: var(--ain-ctl-h);
+  background-color: var(--ain-surface);
+  color: var(--ain-text);
+  border: var(--ain-border-w) solid var(--ain-border);
+  border-radius: var(--ain-radius-ctl);
+}
+.form-control::placeholder { color: var(--ain-muted); opacity: .7; }
+.form-control:focus, .form-select:focus {
+  background-color: var(--ain-surface); color: var(--ain-text);
+  border-color: var(--ain-primary);
+  box-shadow: 0 0 0 .22rem var(--ain-focus);
+}
+.form-control.is-invalid { border-color: var(--ain-danger); }
+.invalid-feedback { color: var(--ain-danger); }
+
+/* ---------- 10) هيكل الشاشة (iPhone) ---------- */
+.ain-app { max-width: 480px; margin: 0 auto; min-height: 100vh; background: var(--ain-bg); }
+.ain-topbar {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--ain-topbar); color: var(--ain-topbar-ink);
+  padding: calc(env(safe-area-inset-top, 0px) + .75rem) 1rem .75rem;
+  display: flex; align-items: center; gap: .75rem;
+}
+.ain-topbar .btn-icon { background: transparent; border: 0; color: inherit; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; }
+.ain-led { width: 10px; height: 10px; border-radius: 50%; background: var(--ain-led); box-shadow: 0 0 0 4px rgba(255, 183, 3, .25); flex: none; }
+.ain-content { padding: 1rem 1rem calc(var(--ain-nav-h) + env(safe-area-inset-bottom, 0px) + 1.25rem); }
+.ain-content.has-actionbar { padding-bottom: calc(var(--ain-nav-h) + 84px + env(safe-area-inset-bottom, 0px)); }
+
+/* ---------- 11) شريط التنقل السفلي (4 أقسام) ---------- */
+.ain-nav {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  max-width: 480px; margin: 0 auto;
+  background: var(--ain-surface); border-top: var(--ain-border-w) solid var(--ain-border);
+  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.ain-nav a {
+  position: relative; min-height: var(--ain-nav-h);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .2rem;
+  font-size: .68rem; font-weight: 500; color: var(--ain-muted); text-decoration: none;
+}
+.ain-nav a svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ain-nav a.active { color: var(--ain-primary-text); font-weight: 700; }
+.ain-nav a.active::before { /* نقطة LED الكهرمانية فوق التبويب النشط */
+  content: ''; position: absolute; top: 8px; left: calc(50% + 10px);
+  width: 8px; height: 8px; border-radius: 50%; background: var(--ain-led);
+}
+
+/* ---------- 12) مكونات ---------- */
+.ain-card { background: var(--ain-surface); border: var(--ain-border-w) solid var(--ain-border); border-radius: var(--ain-radius-card); padding: 1rem; }
+.ain-section-title { font-size: .9375rem; font-weight: 700; margin: 1.25rem 0 .6rem; }
+.ain-kpi { background: var(--ain-surface); border: var(--ain-border-w) solid var(--ain-border); border-radius: var(--ain-radius-card); padding: .8rem .9rem; }
+.ain-kpi .k { font-size: .75rem; color: var(--ain-muted); font-weight: 600; }
+.ain-kpi .v { font-size: 1.25rem; font-weight: 700; line-height: 1.3; }
+.ain-kpi .v small { font-size: .75rem; font-weight: 500; color: var(--ain-muted); }
+.ain-row { display: flex; align-items: center; gap: .75rem; padding: .85rem 1rem; background: var(--ain-surface); border: var(--ain-border-w) solid var(--ain-border); border-radius: var(--ain-radius-card); margin-bottom: .6rem; }
+.ain-row .grow { flex: 1; min-width: 0; }
+.ain-row .t { font-weight: 700; font-size: .975rem; }
+.ain-row .s { font-size: .8125rem; color: var(--ain-muted); }
+.ain-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--ain-surface-2); color: var(--ain-primary-text); display: grid; place-items: center; font-weight: 700; flex: none; border: var(--ain-border-w) solid var(--ain-border); }
+
+.ain-chip { display: inline-flex; align-items: center; gap: .3rem; padding: .18rem .65rem; border-radius: var(--ain-radius-pill); font-size: .75rem; font-weight: 600; background: var(--ain-surface-2); color: var(--ain-muted); }
+.ain-chip.sent     { background: var(--ain-info-bg);    color: var(--ain-info); }
+.ain-chip.accepted { background: var(--ain-success-bg); color: var(--ain-success); }
+.ain-chip.rejected { background: var(--ain-danger-bg);  color: var(--ain-danger); }
+.ain-chip.warn     { background: var(--ain-warning-bg); color: var(--ain-warning); }
+.ain-filter { display: flex; gap: .5rem; overflow-x: auto; padding-bottom: .25rem; }
+.ain-filter button { flex: none; border: var(--ain-border-w) solid var(--ain-border); background: var(--ain-surface); color: var(--ain-text); border-radius: var(--ain-radius-pill); padding: .35rem .9rem; font-size: .8125rem; font-weight: 600; min-height: 36px; }
+.ain-filter button.on { background: var(--ain-primary); border-color: var(--ain-primary); color: var(--ain-primary-ink); }
+
+.ain-alert { display: flex; gap: .6rem; align-items: flex-start; padding: .75rem .9rem; border-radius: var(--ain-radius-ctl); font-size: .875rem; font-weight: 500; background: var(--ain-warning-bg); color: var(--ain-warning); }
+.ain-alert.ok { background: var(--ain-success-bg); color: var(--ain-success); }
+.ain-alert.bad { background: var(--ain-danger-bg); color: var(--ain-danger); }
+.ain-alert svg { width: 20px; height: 20px; flex: none; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; margin-top: 2px; }
+
+/* عدّاد الكمية (+ / -) لتقليل الكتابة أثناء العمل الميداني */
+.ain-stepper { display: inline-flex; align-items: center; border: var(--ain-border-w) solid var(--ain-border); border-radius: var(--ain-radius-ctl); overflow: hidden; background: var(--ain-surface); }
+.ain-stepper button { width: 44px; height: 44px; border: 0; background: var(--ain-surface-2); color: var(--ain-text); font-size: 1.4rem; font-weight: 700; line-height: 1; }
+.ain-stepper input { width: 52px; text-align: center; border: 0; background: transparent; color: var(--ain-text); font-weight: 700; font-size: 1.05rem; -moz-appearance: textfield; }
+.ain-stepper input::-webkit-outer-spin-button, .ain-stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* شريط الإجراءات الثابت فوق التنقل (الإجمالي + زر توليد العرض) */
+.ain-actionbar {
+  position: fixed; left: 0; right: 0; z-index: 25; max-width: 480px; margin: 0 auto;
+  bottom: calc(var(--ain-nav-h) + env(safe-area-inset-bottom, 0px));
+  background: var(--ain-surface); border-top: var(--ain-border-w) solid var(--ain-border);
+  padding: .65rem 1rem; display: flex; align-items: center; gap: .75rem;
+}
+.ain-actionbar .sum { flex: 1; }
+.ain-actionbar .sum .k { font-size: .75rem; color: var(--ain-muted); font-weight: 600; }
+.ain-actionbar .sum .v { font-size: 1.2rem; font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

@@ -1,0 +1,244 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>خطة البناء: ZOOM | زووم — CCTV Manager</title><style>
+@font-face{font-family:'IBM Plex Sans Arabic';font-weight:400;font-display:swap;src:url('../app-starter/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2') format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200E}
+@font-face{font-family:'IBM Plex Sans Arabic';font-weight:600;font-display:swap;src:url('../app-starter/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2') format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200E}
+@font-face{font-family:'IBM Plex Sans Arabic';font-weight:700;font-display:swap;src:url('../app-starter/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2') format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200E}
+@font-face{font-family:'IBM Plex Sans Arabic';font-weight:400;font-display:swap;src:url('../app-starter/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:'IBM Plex Sans Arabic';font-weight:600;font-display:swap;src:url('../app-starter/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:'IBM Plex Sans Arabic';font-weight:700;font-display:swap;src:url('../app-starter/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
+:root{--bg:#F3F6F7;--surface:#fff;--text:#0E1A22;--muted:#52626E;--line:#D5DDE2;--primary:#096A6C;--amber:#FFB703;--ink:#14212B}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1820;--surface:#16232D;--text:#E8EFF3;--muted:#9DAEBA;--line:#26363F;--primary:#2BB3B5}}
+html{font-size:17px}body{margin:0;background:var(--bg);color:var(--text);font-family:'IBM Plex Sans Arabic',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;line-height:1.85}
+main{max-width:820px;margin:0 auto;padding:1.2rem 1rem 4rem}
+h1{font-size:1.7rem;line-height:1.35;border-inline-start:6px solid var(--amber);padding-inline-start:.7rem;margin:1.2rem 0 .6rem}
+h2{font-size:1.3rem;margin:2.2rem 0 .6rem;padding-bottom:.3rem;border-bottom:2px solid var(--line)}
+h3{font-size:1.08rem;margin:1.6rem 0 .4rem;color:var(--primary)}
+a{color:var(--primary)}hr{border:0;border-top:1px solid var(--line);margin:1.5rem 0}
+table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;background:var(--surface);font-size:.92rem;margin:.8rem 0}
+th,td{border:1px solid var(--line);padding:.45rem .65rem;text-align:right;vertical-align:top}th{background:var(--ink);color:#fff;font-weight:600}
+code{background:rgba(127,140,150,.18);padding:.1rem .35rem;border-radius:5px;font-size:.88em;direction:ltr;unicode-bidi:isolate}
+pre{direction:ltr;text-align:left;background:#0E1A22;color:#E8EFF3;padding:.9rem 1rem;border-radius:10px;overflow-x:auto;font-size:.85rem;line-height:1.55}
+pre code{background:none;padding:0;color:inherit}
+blockquote{margin:.8rem 0;padding:.5rem 1rem;background:rgba(255,183,3,.15);border-inline-start:4px solid var(--amber);border-radius:6px}
+img{max-width:100%;height:auto;border-radius:10px;margin:.4rem 0}li{margin:.2rem 0}input[type=checkbox]{margin-inline-end:.4rem}
+</style></head><body><main><div dir="rtl"><h1>خطة البناء خطوة بخطوة</h1>
+<p>طريقة العمل ثابتة في كل خطوة: <strong>أحدد لك الملف ومكانه ← أعطيك الكود كاملًا ← تنسخه وتجرّبه ← نكمل.</strong> لا ننتقل لخطوة قبل أن تنجح التي قبلها.</p>
+<h2>0) التجهيز (مرة واحدة)</h2>
+<ol>
+<li>أنشئ المجلد <code>C:\Projects\cctv-manager</code>.</li>
+<li>انسخ <strong>كل محتويات</strong> المجلد <code>app-starter</code> من هذه الحزمة إلى داخله.</li>
+<li>تأكد أن عندك المجلدات: <code>css</code> · <code>js</code> · <code>libs</code> · <code>fonts</code> · <code>icons</code>، وملف <code>manifest.json</code>.</li>
+<li>المكتبات (Bootstrap وjQuery وhtml2pdf) والخطوط <strong>جاهزة داخل الحزمة</strong>، فلا حاجة لتحميل أي شيء.</li>
+<li>ثبّت <strong>VS Code</strong> أو أي محرر يحفظ الملفات بترميز <strong>UTF-8</strong> (مهم للعربي). لا تستخدم Notepad العادي.</li>
+</ol>
+<p><strong>خطأ شائع:</strong> أن يحفظ المحرر الملف باسم <code>index.html.txt</code>. فعّل إظهار الامتدادات في Windows (View ← File name extensions).</p>
+<h2>1) المرحلة 1: عرض السعر والعملاء</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>الملف</th>
+<th>ماذا نفعل</th>
+<th>كيف تختبر</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>index.html</code></td>
+<td>هيكل الصفحة، الشريط العلوي، التبويبات الأربعة</td>
+<td>افتحه بالمتصفح وتظهر الأقسام بالثيم الصحيح</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>css/app.css</code></td>
+<td>تنسيقات صغيرة خاصة بالتطبيق</td>
+<td>الشاشات متناسقة مع صور المعاينة</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>js/utils.js</code></td>
+<td>دوال مساعدة: <code>escapeHtml</code>، تنسيق المبالغ والتواريخ، تنظيف الهاتف</td>
+<td>تجربة بالـ Console</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>js/db.js</code></td>
+<td>الاتصال بـ IndexedDB وعمليات الحفظ والقراءة</td>
+<td>حفظ سجل تجريبي وقراءته بعد إعادة تحميل الصفحة</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>js/app.js</code></td>
+<td>التنقل بين الأقسام وتحميل الإعدادات</td>
+<td>الانتقال بين التبويبات بدون أخطاء</td>
+</tr>
+<tr>
+<td>6</td>
+<td>شاشة الإعدادات</td>
+<td>بيانات النشاط واللوجو والشروط</td>
+<td>تُحفظ وتبقى بعد إغلاق الصفحة</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>js/quotes.js</code></td>
+<td>نموذج عرض السعر والحسابات (القسم 6 من الوثيقة)</td>
+<td>الصافي = 6,930 في المثال</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>js/pdf.js</code></td>
+<td>توليد الـ PDF بقالب <code>quote-sheet.css</code></td>
+<td>عربي سليم، صفحة A4 واحدة</td>
+</tr>
+<tr>
+<td>9</td>
+<td>زر المشاركة</td>
+<td><code>navigator.share</code> للـ PDF + رسالة واتساب نصية</td>
+<td>تصل على الواتساب</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>js/clients.js</code></td>
+<td>قائمة العملاء والبحث</td>
+<td>البحث بالاسم والهاتف يعمل</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>service-worker.js</code></td>
+<td>العمل بدون إنترنت</td>
+<td>وضع الطيران: التطبيق يفتح</td>
+</tr>
+<tr>
+<td>12</td>
+<td>الرفع</td>
+<td>GitHub Pages ثم الاختبار على الآيفون</td>
+<td>قائمة القبول في الوثيقة (القسم 15)</td>
+</tr>
+</tbody></table>
+<p><strong>أول اختبار حاسم (قبل الخطوة 7):</strong> صفحة تجريبية صغيرة تولّد PDF عربيًا وتفتحه على الآيفون. إن ظهر الخط مشوهًا نغيّر الأسلوب فورًا قبل بناء الباقي.</p>
+<h2>2) المرحلة 2: قائمة الأسعار والنسخ الاحتياطي</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>الملف</th>
+<th>ماذا نفعل</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>js/pricebook.js</code></td>
+<td>شاشة قائمة الأسعار (إضافة وتعديل وحذف) والإدراج في العرض، <strong>مع حقل الدور <code>role</code></strong> للعرض السريع</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>js/quotes.js</code> (تعديل)</td>
+<td>نسخ عرض قديم، الحالات، الدفعات، تحذير الهامش</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>js/packages.js</code></td>
+<td>باقات جاهزة (4 / 8 كاميرات)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>js/backup.js</code></td>
+<td>تصدير واستيراد JSON مع التحقق + تذكير أسبوعي</td>
+</tr>
+</tbody></table>
+<h2>3) المرحلة 3: الحاسبات والعرض السريع</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>الملف</th>
+<th>ماذا نفعل</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>js/calc.js</code></td>
+<td>دوال الحساب (Bitrate، الباور، هبوط الجهد) حسب القسم 7</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>js/calc-ui.js</code></td>
+<td>شاشتا الحاسبات + زر الإضافة لعرض السعر</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>js/quick-quote.js</code></td>
+<td>محرك العرض السريع: يحوّل الأعداد إلى بنود حسب القواعد (القسم 6-هـ)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>js/quick-quote-ui.js</code></td>
+<td>شاشة &quot;اكتب الأعداد فقط&quot; وزر &quot;فتح كعرض سعر&quot; وشاشة قواعده في الإعدادات</td>
+</tr>
+</tbody></table>
+<h2>4) المرحلة 4: الضمان ولوحة الأرباح</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>الملف</th>
+<th>ماذا نفعل</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>js/warranty.js</code></td>
+<td>حساب الضمان وقائمة &quot;ينتهي قريبًا&quot; وزر عرض الصيانة</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>js/dashboard.js</code></td>
+<td>ملخص الشهر والأرباح</td>
+</tr>
+<tr>
+<td>3</td>
+<td>شاشة المظهر</td>
+<td>ربط <code>AinTheme.set()</code> بالإعدادات</td>
+</tr>
+</tbody></table>
+<h2>5) GitHub: من الصفر إلى الآيفون</h2>
+<p><strong>أ) أول مرة</strong></p>
+<ol>
+<li>أنشئ حسابًا على github.com، ثم <strong>New repository</strong> باسم <code>cctv-manager</code> (يمكن أن يكون Public لأنه لا يحتوي بياناتك).</li>
+<li>افتح CMD داخل المجلد <code>C:\Projects\cctv-manager</code> ونفّذ الأوامر بالترتيب (استبدل <code>USERNAME</code> باسم حسابك):</li>
+</ol>
+<pre><code>git init
+git add .
+git commit -m &quot;Initial commit&quot;
+git branch -M main
+git remote add origin https://github.com/USERNAME/cctv-manager.git
+git push -u origin main
+</code></pre>
+<ol start="3">
+<li>في المستودع: <strong>Settings ← Pages ← Source: Deploy from a branch ← Branch: main / (root) ← Save</strong>.</li>
+<li>بعد دقيقة أو اثنتين يظهر الرابط: <code>https://USERNAME.github.io/cctv-manager/</code></li>
+</ol>
+<p><strong>ب) على الآيفون (Safari فقط)</strong></p>
+<ol>
+<li>افتح الرابط في Safari ← زر المشاركة ← <strong>Add to Home Screen</strong>.</li>
+<li>افتح التطبيق من الأيقونة (وليس من Safari)، <strong>وابدأ إدخال بياناتك من هنا</strong>.</li>
+</ol>
+<p><strong>ج) عند كل تحديث</strong></p>
+<pre><code>git add .
+git commit -m &quot;وصف قصير للتعديل&quot;
+git push
+</code></pre>
+<p>ثم ارفع <code>CACHE_VERSION</code> في <code>service-worker.js</code> قبل الـ commit، وبعد الرفع أغلق التطبيق على الآيفون وافتحه مرتين.</p>
+<p><strong>د) ملاحظة:</strong> إن فضّلت الرفع اليدوي من موقع GitHub (Add file ← Upload files) فهو يعمل أيضًا، لكن تأكد من رفع <strong>المجلدات كاملة</strong> مع الحفاظ على أسمائها.</p>
+<h2>6) أخطاء شائعة</h2>
+<ul>
+<li>تعديل ملف ثم نسيان رفع رقم <code>CACHE_VERSION</code> ⇒ الآيفون يعرض النسخة القديمة.</li>
+<li>فتح التطبيق في Safari مرة وفي الأيقونة مرة ⇒ بيانات منفصلة. استخدم الأيقونة فقط.</li>
+<li>وضع <code>/</code> في أول مسار الملفات (<code>/css/app.css</code>) ⇒ لا تعمل على GitHub Pages. اكتب <code>css/app.css</code>.</li>
+<li>تحميل المكتبات من الإنترنت داخل <code>index.html</code> ⇒ يتعطل التطبيق بدون إنترنت. استخدم المجلد <code>libs</code>.</li>
+<li>رفع ملف نسخة احتياطية فيه بيانات عملاء إلى GitHub ⇒ ممنوع. الملف <code>.gitignore</code> الموجود في الحزمة يمنع ذلك لأسماء <code>backup-*.json</code>.</li>
+<li>نسيان <code>viewport-fit=cover</code> ⇒ تظهر مسافات بيضاء حول الشاشة.</li>
+</ul>
+<h2>7) كيف نبدأ فعليًا</h2>
+<p>قل لي: <strong>&quot;ابدأ المرحلة 1، الخطوة 1&quot;</strong> وسأعطيك <code>index.html</code> كاملًا، مع شرح قصير بالعربي وتحذيرات الخطوة.</p>
+</div>
+</main></body></html>
