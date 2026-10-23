@@ -46,6 +46,8 @@
 .ain-nav a span:first-child { font-size:1.2rem; line-height:1.2; }
 .ain-nav a:focus-visible { outline-offset:-3px; }
 @media (max-width:360px) { .project-item { grid-template-columns:1fr; } .project-item .project-line-total { grid-column:auto; } }
+@media (max-width:360px) { .preview-frame .qs-sheet { zoom:.38; transform:none; margin:0 auto; } }
+@media (min-width:361px) and (max-width:699px) { .preview-frame .qs-sheet { zoom:.45; transform:none; margin:0 auto; } }
 @media (min-width:700px) { .ain-app { max-width:760px; box-shadow:0 0 28px #14212b12; } .ain-content { padding-inline:1.5rem; } .record-list { grid-template-columns:1fr 1fr; } .dashboard-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .preview-frame .qs-sheet { transform:scale(.82); margin-bottom:-54mm; } }
 @media print { body * { visibility:hidden !important; } #print-root,#print-root * { visibility:visible !important; } #print-root { display:block; position:absolute; inset:0; } .qs-sheet { margin:0 !important; box-shadow:none !important; } }
 

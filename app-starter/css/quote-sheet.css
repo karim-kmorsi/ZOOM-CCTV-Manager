@@ -4,6 +4,7 @@
    ===================================================================== */
 .qs-sheet {
   width: 210mm; min-height: 297mm; box-sizing: border-box; position: relative;
+  display: flex; flex-direction: column;
   background: #FFFFFF; color: #0E1A22; direction: rtl; text-align: right;
   padding: 14mm 14mm 22mm;
   font-family: 'IBM Plex Sans Arabic', Tahoma, Arial, sans-serif; font-size: 10pt; line-height: 1.55;
@@ -27,10 +28,15 @@
 .qs-title::before { content: ''; display: inline-block; width: 5px; height: 1em; background: #00B4D8; margin-inline-end: 8px; vertical-align: -2px; }
 
 .qs-client { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5mm 8mm; background: #F3F6F7; border-radius: 3mm; padding: 4mm 5mm; }
-.qs-client .k { color: #52626E; font-size: 9pt; }
+.qs-client .k { display:inline-block; min-width: 25mm; color: #52626E; font-size: 9pt; }
 .qs-client .v { font-weight: 600; }
 
-.qs-table { width: 100%; border-collapse: collapse; margin-top: 2mm; font-size: 10pt; }
+.qs-table { width: 100%; table-layout: fixed; border-collapse: collapse; margin-top: 2mm; font-size: 10pt; }
+.qs-table col:nth-child(1) { width: 7%; }
+.qs-table col:nth-child(2) { width: 43%; }
+.qs-table col:nth-child(3) { width: 12%; }
+.qs-table col:nth-child(4) { width: 19%; }
+.qs-table col:nth-child(5) { width: 19%; }
 .qs-table th { background: #0B2D4A; color: #FFFFFF; padding: 2.2mm 2.5mm; text-align: right; font-weight: 600; font-size: 9.5pt; }
 .qs-table th:first-child { border-radius: 0 2mm 2mm 0; }
 .qs-table th:last-child  { border-radius: 2mm 0 0 2mm; }
@@ -38,10 +44,11 @@
 .qs-table .c { text-align: center; }
 .qs-table .n { text-align: left; white-space: nowrap; }
 .qs-table .spec { color: #52626E; font-size: 8.5pt; }
+.qs-table tr { break-inside: avoid; page-break-inside: avoid; }
 
-.qs-totals { margin-top: 4mm; margin-inline-start: auto; width: 80mm; }
+.qs-totals { margin-top: 4mm; margin-inline-start: auto; width: min(80mm, 100%); break-inside: avoid; page-break-inside: avoid; }
 .qs-totals .r { display: flex; justify-content: space-between; padding: 1.4mm 2mm; }
-.qs-totals .r.disc { color: #C62828; }
+.qs-totals .r.disc { color: #52626E; }
 .qs-totals .grand { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5mm; padding: 3mm 3.5mm; background: #0B2D4A; color: #FFFFFF; border-radius: 2.5mm; font-weight: 700; font-size: 12pt; }
 .qs-totals .grand .amt { color: #00B4D8; }
 
@@ -53,7 +60,9 @@
 .qs-sign { display: flex; justify-content: space-between; gap: 20mm; margin-top: 12mm; font-size: 9.5pt; color: #52626E; }
 .qs-sign div { flex: 1; border-top: 1px solid #0E1A22; padding-top: 1.5mm; text-align: center; }
 
-.qs-foot { position: absolute; left: 14mm; right: 14mm; bottom: 8mm; text-align: center; font-size: 8.5pt; color: #52626E; border-top: 1px solid #D5DDE2; padding-top: 2mm; }
+.qs-foot { margin-top: auto; text-align: center; font-size: 8.5pt; color: #52626E; border-top: 1px solid #D5DDE2; padding-top: 2mm; }
+
+.qs-head, .qs-client, .qs-totals, .qs-sign { break-inside: avoid; page-break-inside: avoid; }
 
 @page { size: A4; margin: 0; }
 @media print { .qs-sheet { box-shadow: none; margin: 0; } }
