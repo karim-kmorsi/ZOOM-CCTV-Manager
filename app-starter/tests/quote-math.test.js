@@ -83,4 +83,5 @@ test('editor, quote list, preview and PDF consume the same shared calculation re
   assert.equal((quoteSource.match(/vatPct=effectiveVatPct\(\)/g) || []).length, 2);
   assert.match(pdfSource, /AinQuotes\.calc\(quote\.items,quote\.discount,quote\.vatEnabled,quote\.vatPct\)/);
   assert.match(pdfSource, /totals\.lineTotals\[n\]/);
+  assert.match(pdfSource, /U\.escapeHtml\(settings\.logoDataUrl\)/);
 });
